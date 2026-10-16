@@ -29,7 +29,7 @@ namespace Zajecia_09_10_2026
         {
             var metody = typeof(Sortowanie).GetMethods().Where(m => m.GetParameters().Length == 1 
                                                                && m.GetParameters().First().ParameterType == typeof(int[]) 
-                                                               && m.ReturnType == typeof(void)
+                                                               //&& m.ReturnType == typeof(void)
                                                                && m.IsStatic).ToArray();
             //cbMetodaSortowania.Items.AddRange(metody);
             cbMetodaSortowania.DataSource = metody;
