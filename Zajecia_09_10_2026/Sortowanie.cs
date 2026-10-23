@@ -43,39 +43,61 @@ namespace Zajecia_09_10_2026
             }
         }
 
-        public static int[] PrzezScalanie(int[] liczby)
+        
+
+        public static void PrzezScalanie(int[] liczby)
         {
-            if (liczby.Length == 1)
+            if(liczby != null)
             {
-                return liczby;
+              split(liczby, 0, liczby.Length - 1);
+            }      
+        }
+
+        public static void split(int[] liczby, int p, int k)
+        {
+            if (p < k)
+            {
+                int srodek = (p + k) / 2;
+                split(liczby, p, srodek);
+                split(liczby, srodek + 1, k);
+                merge (liczby, p, srodek, k);
             }
-            int[] tabLeft = PrzezScalanie(liczby[..(liczby.Length / 2)]);
-            int[] tabRight = PrzezScalanie(liczby[(liczby.Length / 2)..]);
-            for(int i = 0, l = 0, r = 0; i < liczby.Length; i++)
+        }
+
+        public static void merge(int[] liczby, int p, int srodek, int k)
+        {
+            int[] copy = new int[liczby.Length];
+            liczby.CopyTo(copy, 0);
+
+            for (int i = p, l = p, r = srodek + 1; i <= k; i++)
             {
-                if(l >= tabLeft.Length)
+                if (l > srodek)
                 {
-                    liczby[i] = tabRight[r];
+                    liczby[i] = copy[r];
                     r++;
-                } else if(r >= tabRight.Length)
+                } else if (r > k)
                 {
-                    liczby[i] = tabLeft[l];
+                    liczby[i] = copy[l];
                     l++;
-                } else if (tabLeft[l] > tabRight[r])
+                } else if (copy[l] < copy[r])
                 {
-                    liczby[i] = tabLeft[l];
+                    liczby[i] = copy[l];
                     l++;
                 } else
                 {
-                    liczby[i] = tabLeft[r];
+                    liczby[i] = copy[r];
                     r++;
                 }
-            
+
             }
-            return liczby;
-            
+        }
+
+        public static void PrzezZliczanie(int[] liczby) // simplified (no support for sub zero digits yet)
+        {
+            int[] helperTab = new int[liczby.Max()];
 
         }
+
 
         public static int[] Konwertuj(string liczby)
         {

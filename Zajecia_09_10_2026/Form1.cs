@@ -14,6 +14,7 @@ namespace Zajecia_09_10_2026
             int[] liczby = Sortowanie.Konwertuj(tbLiczby.Text);
 
             //Sortowanie.Babelkowe(liczby);
+
             var metoda = (MethodInfo)cbMetodaSortowania.SelectedItem;
             metoda.Invoke(null, new object[] { liczby });
 
