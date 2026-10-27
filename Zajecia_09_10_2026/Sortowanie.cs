@@ -94,7 +94,21 @@ namespace Zajecia_09_10_2026
 
         public static void PrzezZliczanie(int[] liczby) // simplified (no support for sub zero digits yet)
         {
-            int[] helperTab = new int[liczby.Max()];
+            int myMin = liczby.Min() < 0 ? liczby.Min() : 0;
+            int[] helperTab = new int[liczby.Max() + 1 - myMin];
+            for (int i = 0; i < liczby.Length; i++)
+            {
+                helperTab[liczby[i] - myMin]++;
+            }
+            for(int i = 0, counter = 0; i < helperTab.Length; i++)
+            {
+                for(int k = 0; k < helperTab[i]; k++)
+                {
+                    liczby[counter] = i + myMin;
+                    counter++;
+                }
+            }
+
 
         }
 
