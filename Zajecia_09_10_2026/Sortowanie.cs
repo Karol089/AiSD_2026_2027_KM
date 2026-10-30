@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -92,7 +93,7 @@ namespace Zajecia_09_10_2026
             }
         }
 
-        public static void PrzezZliczanie(int[] liczby) // simplified (no support for sub zero digits yet)
+        public static void PrzezZliczanie(int[] liczby)
         {
             int myMin = liczby.Min() < 0 ? liczby.Min() : 0;
             int[] helperTab = new int[liczby.Max() + 1 - myMin];
@@ -108,8 +109,54 @@ namespace Zajecia_09_10_2026
                     counter++;
                 }
             }
+        }
 
+        public static void przezKopcowanie(int[] liczby) // do dokończenia
+        {
+            for(int i = liczby.Length - 1; i >= 0; i--)
+            {
+                while (liczby[i] > liczby[i / 2])
+                {
+                    int k = i + 1;
+                    while (k > 1 && liczby[k - 1] > liczby[k / 2 - 1])
+                    {
+                        int temp = liczby[k - 1];
+                        liczby[k - 1] = liczby[k / 2 - 1];
+                        liczby[k / 2 - 1] = temp;
+                        k = k / 2;
+                    }
+                }                       
+            }
+        }
 
+        public static void fixHeap(int[] tab)
+        {
+            int i = 0;
+            while (tab[i] < Sortowanie.ownMax(tab[(i + 1) * 2 - 1], tab[(i + 1) * 2]))
+            {
+                int temp = tab[i];
+                tab[i] = tab[] // do dokończenia
+            }
+        }
+
+        /*for (int k = i; k > 0; k = k / 2)
+                    {
+                        if (liczby[k] > liczby[k / 2])
+                        {
+                            int temp = liczby[k];
+                            liczby[k] = liczby[k / 2];
+                            liczby[k / 2] = temp;
+                        }
+                    }*/
+
+        public static int ownMin(int a, int b)
+        {
+            return a < b ? a : b;
+        }
+
+        public static int ownMax(int a, int b)
+        {
+            return a > b ? a : b;
         }
 
 
