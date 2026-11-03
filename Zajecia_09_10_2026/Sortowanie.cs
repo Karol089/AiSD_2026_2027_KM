@@ -111,44 +111,29 @@ namespace Zajecia_09_10_2026
             }
         }
 
-        public static void przezKopcowanie(int[] liczby) // do dokończenia
+        public static void PrzezKopcowanie(int[] liczby) // do dokończenia
         {
-            for(int i = liczby.Length - 1; i >= 0; i--)
+            for (int i = 0; i < liczby.Length; i++)
             {
-                while (liczby[i] > liczby[i / 2])
+                Sortowanie.Kopcuj(liczby, liczby.Length - 1 - i);
+                int temp = liczby[0];
+                liczby[0] = liczby[liczby.Length - 1 - i];
+                liczby[liczby.Length - 1 - i] = temp;
+            }
+        }
+
+        public static void Kopcuj(int[] liczby, int koniec)
+        {
+            for(int i = koniec; i > 0; i--)
+            {
+                if (liczby[i] > liczby[(i - 1) / 2])
                 {
-                    int k = i + 1;
-                    while (k > 1 && liczby[k - 1] > liczby[k / 2 - 1])
-                    {
-                        int temp = liczby[k - 1];
-                        liczby[k - 1] = liczby[k / 2 - 1];
-                        liczby[k / 2 - 1] = temp;
-                        k = k / 2;
-                    }
-                }                       
+                    int temp = liczby[i];
+                    liczby[i] = liczby[(i - 1) / 2];
+                    liczby[(i - 1) / 2] = temp;
+                }
             }
         }
-
-        public static void fixHeap(int[] tab)
-        {
-            int i = 0;
-            while (tab[i] < Sortowanie.ownMax(tab[(i + 1) * 2 - 1], tab[(i + 1) * 2]))
-            {
-                int temp = tab[i];
-                tab[i] = tab[] // do dokończenia
-            }
-        }
-
-        /*for (int k = i; k > 0; k = k / 2)
-                    {
-                        if (liczby[k] > liczby[k / 2])
-                        {
-                            int temp = liczby[k];
-                            liczby[k] = liczby[k / 2];
-                            liczby[k / 2] = temp;
-                        }
-                    }*/
-
         public static int ownMin(int a, int b)
         {
             return a < b ? a : b;
