@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Studia\\Semestr_nr_3\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj": {}
+    "D:\\185135\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj": {}
   },
   "projects": {
-    "D:\\Studia\\Semestr_nr_3\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj": {
+    "D:\\185135\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Studia\\Semestr_nr_3\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj",
+        "projectUniqueName": "D:\\185135\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj",
         "projectName": "Zajecia_09_10_2026",
-        "projectPath": "D:\\Studia\\Semestr_nr_3\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj",
-        "packagesPath": "C:\\Users\\karol\\.nuget\\packages\\",
-        "outputPath": "D:\\Studia\\Semestr_nr_3\\AiSD\\Zajecia_09_10_2026\\obj\\",
+        "projectPath": "D:\\185135\\AiSD\\Zajecia_09_10_2026\\Zajecia_09_10_2026.csproj",
+        "packagesPath": "C:\\Users\\local\\.nuget\\packages\\",
+        "outputPath": "D:\\185135\\AiSD\\Zajecia_09_10_2026\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\local\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,12 +26,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows": {
-            "framework": "net6.0-windows7.0",
+          "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {}
           }
@@ -46,11 +44,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net6.0-windows": {
-          "framework": "net6.0-windows7.0",
+        "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "imports": [
             "net461",
@@ -71,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.320\\RuntimeIdentifierGraph.json"
         }
       }
     }

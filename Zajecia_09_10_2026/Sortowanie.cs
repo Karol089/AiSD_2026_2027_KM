@@ -111,7 +111,7 @@ namespace Zajecia_09_10_2026
             }
         }
 
-        public static void PrzezKopcowanie(int[] liczby) // do dokończenia
+        public static void PrzezKopcowanie(int[] liczby)
         {
             for (int i = 0; i < liczby.Length; i++)
             {
@@ -134,6 +134,39 @@ namespace Zajecia_09_10_2026
                 }
             }
         }
+
+        // 7 2 9 4 1 8 3 0 6 5
+        public static void Szybkie(int[] liczby)
+        {
+            QuickSort(liczby, 0, liczby.Length - 1);
+        }
+
+        public static void QuickSort(int[] liczby, int start, int end)
+        {
+            int L = start, i = L - 1;
+            int P = end, j = P + 1;
+            int pivot = liczby[L];
+            if (L < P)
+            {
+                while (i < j)
+                {
+                    while (i < j && liczby[++i] <= pivot)
+                    {
+                        while (i < j && liczby[--j] >= pivot)
+                        {
+                        }
+                    }
+                    Swap(liczby, i, j);
+                    /*int temp = liczby[i];
+                    liczby[i] = liczby[j];
+                    liczby[j] = temp;*/             
+                }
+                QuickSort(liczby, L, j);
+                QuickSort(liczby, i, P);
+            }
+        }
+
+
         public static int ownMin(int a, int b)
         {
             return a < b ? a : b;
@@ -142,6 +175,13 @@ namespace Zajecia_09_10_2026
         public static int ownMax(int a, int b)
         {
             return a > b ? a : b;
+        }
+
+        public static void Swap(int[] tab, int i, int k)
+        {
+            int temp = tab[i];
+            tab[i] = tab[k];
+            tab[k] = temp;
         }
 
 
