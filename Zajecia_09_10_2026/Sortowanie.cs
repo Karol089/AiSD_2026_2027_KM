@@ -142,36 +142,26 @@ namespace Zajecia_09_10_2026
             QuickSort(liczby, 0, liczby.Length - 1);
         }
 
-        public static void QuickSort(int[] liczby, int start, int end) // do dokończenia (obecnie index out of range)
+        public static void QuickSort(int[] liczby, int start, int end)
         {
-            int L = start, i = L - 1;
-            int P = end, j = P + 1;
-            int pivot = liczby[L];
-            if(L >= P)
+            if (start >= end)
             {
                 return;
             }
-            if (L < P)
+            int L = start, i = L - 1;
+            int P = end, j = P + 1;
+            int pivot = liczby[L];
+            while (i < j)
             {
-                while (i <= j)
+                while (liczby[++i] < pivot) { }
+                while (liczby[--j] > pivot) { }
+                if (j > i)
                 {
-                    while (i <= j && i + 1 <= P &&liczby[++i] < pivot)
-                    {
-                        while (i <= j && j - 1 >= L && liczby[--j] > pivot)
-                        {
-                        }
-                    }
-
-                    if (i <= P && j >= L)
-                    {
-                        Swap(liczby, i, j);
-                    }                               
-                }
-                if(i > P) { i = P; }
-                if(j < L) { j = L; }
-                QuickSort(liczby, L, j);
-                QuickSort(liczby, i, P);
+                    Swap(liczby, i, j);
+                }                               
             }
+            QuickSort(liczby, L, j);
+            QuickSort(liczby, j + 1, P);
         }
 
 
