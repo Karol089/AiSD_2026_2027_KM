@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Zajecia_13_11_2026/1.0.0": {
+        "runtime": {
+          "Zajecia_13_11_2026.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Zajecia_13_11_2026/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
