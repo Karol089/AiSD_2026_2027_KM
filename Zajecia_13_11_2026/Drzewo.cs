@@ -10,6 +10,7 @@ namespace Zajecia_13_11_2026
     {
         private Wezel root;
         private int numElem = 0;
+        private static int currElem = 0;
 
         public Drzewo(Wezel root)
         {
@@ -71,34 +72,49 @@ namespace Zajecia_13_11_2026
             addBST(new Wezel(value));
         }
 
-        public int[] toTab(Drzewo myTree)
+        public int[] toTab() // Do zrobienia: inOrder, postOrder
         {
             if (this.numElem < 1)
             {
                 return new int[0];
             }
             int[] newTab = new int[this.numElem];
-            preOrder(myTree.root, newTab, 0);
+            preOrder(this.root, newTab);
+            currElem = 0;
             return newTab;
         }
 
-        public void preOrder(Wezel myElem, int[] target, int currElem) // Do dokończenia
+        public void preOrder(Wezel myElem, int[] target)
         {
             target[currElem] = myElem.getValue();
-            if(myElem.getLeftChild != null)
+            currElem++;
+            if(myElem.getLeftChild() != null)
             {
-                preOrder(myElem.getLeftChild(), target, currElem + 1);
+                preOrder(myElem.getLeftChild(), target);
             }
-            if (myElem.getRightChild != null)
+            if (myElem.getRightChild() != null)
             {
-                preOrder(myElem.getRightChild(), target, currElem + 1);
+                preOrder(myElem.getRightChild(), target);
             }
 
+        }
+
+        public String giveInfo()
+        {
+            String output = "Root value = ";
+            if (this.root != null)
+            {
+                output += this.root.getValue();
+            } else
+            {
+                output += "Not set";
+            }
+            return output + "\nNumber of elements: " + numElem + "\nElements:\n" + this.ToString();
         }
 
         public override string ToString()
         {
-            return "Root value = " + this.root.getValue() + "\nNumber of elements: " + numElem;
+            return String.Join(" ", this.toTab());
         }
 
     }
